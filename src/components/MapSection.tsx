@@ -15,6 +15,11 @@ interface EventData {
 const MapSection: React.FC = () => {
   const categories = [
     "All",
+    "Software Engineering",
+    "Finance",
+    "Marketing",
+    "Music Business",
+    "Venture Capital",
     "Fashion Tech",
     "Beauty & Cosmetics",
     "Biotech",
@@ -79,6 +84,56 @@ const MapSection: React.FC = () => {
       x: 20,
       y: 55 
     },
+    { 
+      id: 6, 
+      title: "Full-Stack Engineering Workshop", 
+      description: "Learn modern web development practices.", 
+      location: "Google NYC", 
+      category: "Software Engineering", 
+      date: "Next Mon, 2-5pm",
+      x: 55,
+      y: 35 
+    },
+    { 
+      id: 7, 
+      title: "Venture Capital Pitch Day", 
+      description: "Present your startup to top VCs.", 
+      location: "Union Square Ventures", 
+      category: "Venture Capital", 
+      date: "Fri, 1-4pm",
+      x: 70,
+      y: 45 
+    },
+    { 
+      id: 8, 
+      title: "Music Industry Networking", 
+      description: "Connect with music industry professionals.", 
+      location: "Sony Music HQ", 
+      category: "Music Business", 
+      date: "Thu, 7-9pm",
+      x: 25,
+      y: 30 
+    },
+    { 
+      id: 9, 
+      title: "Digital Marketing Summit", 
+      description: "Latest trends in digital marketing.", 
+      location: "Marketing Hub NYC", 
+      category: "Marketing", 
+      date: "Wed, 10am-2pm",
+      x: 40,
+      y: 50 
+    },
+    { 
+      id: 10, 
+      title: "Investment Banking Forum", 
+      description: "Learn about career opportunities in IB.", 
+      location: "Goldman Sachs", 
+      category: "Finance", 
+      date: "Tue, 6-8pm",
+      x: 85,
+      y: 40 
+    },
   ];
   
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
@@ -132,15 +187,15 @@ const MapSection: React.FC = () => {
                 backgroundSize: '100px 100px',
               }}>
                 <div className="absolute inset-0">
-                  <div className="absolute inset-0 bg-[#e8f4f8] opacity-30"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#E5DEFF]/20 via-[#FDE1D3]/20 to-[#D3E4FD]/20"></div>
                   <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <div key={i} className="border-b border-[#d1e8f5]/30"></div>
+                      <div key={i} className="border-b border-[#d1e8f5]/40"></div>
                     ))}
                   </div>
                   <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <div key={i} className="border-r border-[#d1e8f5]/30"></div>
+                      <div key={i} className="border-r border-[#d1e8f5]/40"></div>
                     ))}
                   </div>
                 </div>
@@ -162,15 +217,20 @@ const MapSection: React.FC = () => {
                       viewBox="0 0 24 24" 
                       fill="none" 
                       className={`
-                        ${event.category === "Fashion Tech" ? "text-blue-500" : ""}
-                        ${event.category === "Beauty & Cosmetics" ? "text-purple-500" : ""}
-                        ${event.category === "Biotech" ? "text-amber-500" : ""}
-                        ${event.category === "Digital Health" ? "text-green-500" : ""}
-                        ${event.category === "FinTech" ? "text-rose-400" : ""}
+                        ${event.category === "Software Engineering" ? "text-blue-500" : ""}
+                        ${event.category === "Finance" ? "text-green-500" : ""}
+                        ${event.category === "Marketing" ? "text-purple-500" : ""}
+                        ${event.category === "Music Business" ? "text-pink-500" : ""}
+                        ${event.category === "Venture Capital" ? "text-amber-500" : ""}
+                        ${event.category === "Fashion Tech" ? "text-rose-500" : ""}
+                        ${event.category === "Beauty & Cosmetics" ? "text-violet-500" : ""}
+                        ${event.category === "Biotech" ? "text-emerald-500" : ""}
+                        ${event.category === "Digital Health" ? "text-cyan-500" : ""}
+                        ${event.category === "FinTech" ? "text-orange-500" : ""}
                         ${event.category === "EdTech" ? "text-indigo-500" : ""}
-                        ${event.category === "Sustainability" ? "text-cyan-500" : ""}
+                        ${event.category === "Sustainability" ? "text-teal-500" : ""}
                         ${event.category === "Food Innovation" ? "text-yellow-500" : ""}
-                        ${event.category === "Media & Entertainment" ? "text-pink-500" : ""}
+                        ${event.category === "Media & Entertainment" ? "text-fuchsia-500" : ""}
                       `}
                     >
                       <path
