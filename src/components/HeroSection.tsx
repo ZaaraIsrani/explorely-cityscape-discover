@@ -10,11 +10,11 @@ const HeroSection: React.FC = () => {
         className="absolute inset-0 bg-cover bg-center z-0" 
         style={{ 
           backgroundImage: 'url("https://images.unsplash.com/photo-1534430480872-15e61fb5beaa?auto=format&fit=crop&q=80&w=1470")',
-          filter: 'brightness(0.6) saturate(1.1)'
+          filter: 'brightness(0.5) saturate(1.2) contrast(0.9)'
         }}
       >
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/30 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/20 backdrop-blur-[2px]"></div>
       </div>
       
       {/* Content */}
