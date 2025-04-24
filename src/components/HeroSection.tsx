@@ -9,28 +9,29 @@ const HeroSection: React.FC = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center z-0" 
         style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&q=80")',
-          filter: 'brightness(0.7)'
+          backgroundImage: 'url("https://images.unsplash.com/photo-1534430480872-15e61fb5beaa?auto=format&fit=crop&q=80&w=1470")',
+          filter: 'brightness(0.6) saturate(1.1)'
         }}
       >
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/40 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/30 backdrop-blur-[2px]"></div>
       </div>
       
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-2xl animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            Make NYC your classroom.
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+            <span className="text-primary">Explore</span>
+            <span className="text-white">ly</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8">
+          <p className="text-xl md:text-2xl text-white/90 mb-8 font-medium drop-shadow-md">
             Discover local events and micro-career experiences—all around you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary font-medium text-lg">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold text-lg">
               Explore Now
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 font-semibold text-lg">
               How It Works
             </Button>
           </div>
