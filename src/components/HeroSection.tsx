@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 
@@ -26,7 +27,7 @@ const HeroSection: React.FC = () => {
           <p className="text-xl md:text-2xl text-black/90 mb-8 font-medium drop-shadow-md text-center">
             Discover local events and micro-career experiences—all around you.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold text-lg">
               Explore Now
             </Button>
@@ -34,30 +35,31 @@ const HeroSection: React.FC = () => {
               How It Works
             </Button>
           </div>
+          
+          {/* Scroll indicator - now directly below buttons */}
+          <div className="flex flex-col items-center mx-auto text-center w-full">
+            <span className="text-black text-sm mb-2 font-medium">Scroll to discover</span>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              className="text-black mx-auto"
+            >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </div>
         </div>
-      </div>
-      
-      {/* Scroll indicator - now with improved centering */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce mx-auto text-center w-full">
-        <span className="text-black text-sm mb-2 font-medium">Scroll to discover</span>
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="24" 
-          height="24" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2" 
-          strokeLinecap="round" 
-          strokeLinejoin="round" 
-          className="text-black mx-auto"
-        >
-          <line x1="12" y1="5" x2="12" y2="19"></line>
-          <polyline points="19 12 12 19 5 12"></polyline>
-        </svg>
       </div>
     </section>
   );
 };
 
 export default HeroSection;
+
