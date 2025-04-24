@@ -1,8 +1,6 @@
-
 import React, { useState } from "react";
 import CategoryFilter from "./CategoryFilter";
 
-// Define mock event data for the map pins
 interface EventData {
   id: number;
   title: string;
@@ -15,82 +13,93 @@ interface EventData {
 }
 
 const MapSection: React.FC = () => {
-  const categories = ["All", "Tech", "Creative", "Business", "Social Impact", "Wellness"];
+  const categories = [
+    "All",
+    "Fashion Tech",
+    "Beauty & Cosmetics",
+    "Biotech",
+    "Digital Health",
+    "FinTech",
+    "EdTech",
+    "Sustainability",
+    "Food Innovation",
+    "Media & Entertainment"
+  ];
+  
   const [activeCategory, setActiveCategory] = useState("All");
 
   const mockEvents: EventData[] = [
     { 
       id: 1, 
-      title: "Tech Meetup @ Google", 
-      description: "Network with Google engineers and learn about their work.", 
-      location: "Chelsea Market", 
-      category: "Tech", 
+      title: "AI in Fashion Design @ Parsons", 
+      description: "Learn how AI is transforming fashion design and production.", 
+      location: "Parsons School of Design", 
+      category: "Fashion Tech", 
       date: "Tomorrow, 6-8pm",
       x: 30,
       y: 40
     },
     { 
       id: 2, 
-      title: "Design Workshop", 
-      description: "Hands-on UI/UX workshop with industry professionals.", 
-      location: "NYU Tisch", 
-      category: "Creative", 
+      title: "Biotech Lab Tour", 
+      description: "Visit NYU Langone's research facilities.", 
+      location: "NYU Langone", 
+      category: "Biotech", 
       date: "Sat, 2-4pm",
       x: 65,
       y: 60 
     },
     { 
       id: 3, 
-      title: "Startup Pitch Night", 
-      description: "Watch NYU entrepreneurs pitch their startups.", 
+      title: "FinTech Innovation Workshop", 
+      description: "Blockchain and DeFi workshop with industry experts.", 
       location: "Stern School of Business", 
-      category: "Business", 
+      category: "FinTech", 
       date: "Next Wed, 7pm",
       x: 80,
       y: 25 
     },
     { 
       id: 4, 
-      title: "Community Garden Volunteer", 
-      description: "Help maintain a local community garden.", 
-      location: "Washington Square Park", 
-      category: "Social Impact", 
+      title: "Digital Health Startup Demo", 
+      description: "See the latest in healthcare technology.", 
+      location: "NYU Health Hub", 
+      category: "Digital Health", 
       date: "Sun, 10am-1pm",
       x: 45,
       y: 70 
     },
     { 
       id: 5, 
-      title: "Meditation Session", 
-      description: "Guided meditation for stress relief.", 
-      location: "NYU Global Center", 
-      category: "Wellness", 
+      title: "Clean Beauty Workshop", 
+      description: "Learn about sustainable cosmetics formulation.", 
+      location: "Beauty Labs NYC", 
+      category: "Beauty & Cosmetics", 
       date: "Every Tue, 12pm",
       x: 20,
       y: 55 
     },
   ];
   
-  // Filter events based on active category
+  const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
+  
   const filteredEvents = activeCategory === "All" 
     ? mockEvents 
     : mockEvents.filter(event => event.category === activeCategory);
-  
-  const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
   
   return (
     <section id="features" className="section-padding bg-muted">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Discover Opportunities Around You</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explorely maps out events, workshops, and experiences that match your interests—all across NYC.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Discover Opportunities Around You</h2>
+          <p className="text-lg text-secondary max-w-2xl mx-auto">
+            Find hyper-specific events and experiences that match your interests—across every NYC neighborhood.
           </p>
         </div>
         
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-1/4">
-            <h3 className="text-xl font-semibold mb-4">Filter by Category</h3>
+            <h3 className="text-xl font-semibold mb-4 text-primary">Filter by Category</h3>
             <CategoryFilter 
               categories={categories}
               activeCategory={activeCategory}
@@ -116,30 +125,27 @@ const MapSection: React.FC = () => {
           </div>
           
           <div className="lg:w-3/4 relative">
-            {/* Map mockup */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden aspect-[4/3] relative">
-              {/* Mock map background */}
-              <div className="absolute inset-0 bg-[#e8f0f7]" style={{ 
-                backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c0d4e4' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+              <div className="absolute inset-0" style={{ 
+                backgroundColor: '#f8f9fa',
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='%23f1f3f5'/%3E%3Cpath d='M10 10h80v80H10z' fill='%23e9ecef'/%3E%3C/svg%3E")`,
+                backgroundSize: '100px 100px',
               }}>
-                {/* Major streets on the map */}
-                <div className="absolute inset-0 grid grid-cols-6 grid-rows-6">
-                  <div className="border-b border-blue-200/50 col-span-6"></div>
-                  <div className="border-b border-blue-200/50 col-span-6"></div>
-                  <div className="border-b border-blue-200/50 col-span-6"></div>
-                  <div className="border-b border-blue-200/50 col-span-6"></div>
-                  <div className="border-b border-blue-200/50 col-span-6"></div>
-                </div>
-                <div className="absolute inset-0 grid grid-cols-6 grid-rows-6">
-                  <div className="border-r border-blue-200/50 row-span-6"></div>
-                  <div className="border-r border-blue-200/50 row-span-6"></div>
-                  <div className="border-r border-blue-200/50 row-span-6"></div>
-                  <div className="border-r border-blue-200/50 row-span-6"></div>
-                  <div className="border-r border-blue-200/50 row-span-6"></div>
+                <div className="absolute inset-0">
+                  <div className="absolute inset-0 bg-[#e8f4f8] opacity-30"></div>
+                  <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <div key={i} className="border-b border-[#d1e8f5]/30"></div>
+                    ))}
+                  </div>
+                  <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <div key={i} className="border-r border-[#d1e8f5]/30"></div>
+                    ))}
+                  </div>
                 </div>
               </div>
               
-              {/* Event pins */}
               {filteredEvents.map((event) => (
                 <button
                   key={event.id}
@@ -156,11 +162,15 @@ const MapSection: React.FC = () => {
                       viewBox="0 0 24 24" 
                       fill="none" 
                       className={`
-                        ${event.category === "Tech" ? "text-blue-500" : ""}
-                        ${event.category === "Creative" ? "text-purple-500" : ""}
-                        ${event.category === "Business" ? "text-amber-500" : ""}
-                        ${event.category === "Social Impact" ? "text-green-500" : ""}
-                        ${event.category === "Wellness" ? "text-rose-400" : ""}
+                        ${event.category === "Fashion Tech" ? "text-blue-500" : ""}
+                        ${event.category === "Beauty & Cosmetics" ? "text-purple-500" : ""}
+                        ${event.category === "Biotech" ? "text-amber-500" : ""}
+                        ${event.category === "Digital Health" ? "text-green-500" : ""}
+                        ${event.category === "FinTech" ? "text-rose-400" : ""}
+                        ${event.category === "EdTech" ? "text-indigo-500" : ""}
+                        ${event.category === "Sustainability" ? "text-cyan-500" : ""}
+                        ${event.category === "Food Innovation" ? "text-yellow-500" : ""}
+                        ${event.category === "Media & Entertainment" ? "text-pink-500" : ""}
                       `}
                     >
                       <path
@@ -184,7 +194,6 @@ const MapSection: React.FC = () => {
                 </button>
               ))}
               
-              {/* Map controls mockup */}
               <div className="absolute top-4 right-4 flex flex-col gap-2">
                 <button className="bg-white rounded-md p-1 shadow-md">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -199,7 +208,6 @@ const MapSection: React.FC = () => {
                 </button>
               </div>
               
-              {/* Location marker */}
               <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
                 <div className="flex items-center gap-2 bg-white px-3 py-1 rounded-full shadow-md">
                   <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
