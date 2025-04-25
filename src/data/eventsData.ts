@@ -1,4 +1,3 @@
-
 import { EventData } from "@/types/events";
 
 export const eventsData: EventData[] = [
@@ -122,4 +121,54 @@ export const eventsData: EventData[] = [
     x: 60,
     y: 55 
   },
+  {
+    id: 13,
+    title: "Clean Beauty Startup Showcase",
+    description: "Join a panel of clean beauty founders as they showcase sustainable product lines and share what it's like to launch in NYC. Expect samples, networking, and Q&A with indie brands making waves in the industry.",
+    location: "SoHo Works, 55 Water St, Brooklyn",
+    category: "Cosmetics",
+    date: "May 4, 2025",
+    x: -73.9936,
+    y: 40.7027
+  },
+  {
+    id: 14,
+    title: "Beauty & Tech: AR Try-On Demo Night",
+    description: "Explore how augmented reality is revolutionizing the cosmetics industry. Demo virtual makeup try-ons and hear from UX designers and engineers working at the intersection of beauty and tech.",
+    location: "The NYU Leslie eLab",
+    category: "Cosmetics",
+    date: "May 6, 2025",
+    x: -73.9956,
+    y: 40.7291
+  },
+  {
+    id: 15,
+    title: "Founders in Fragrance: A Fireside Chat",
+    description: "Two fragrance brand founders sit down to talk about building identity-driven scents from scratch. Learn what goes into scent development, marketing, and launching niche perfumes.",
+    location: "The Wing Dumbo, Brooklyn",
+    category: "Cosmetics",
+    date: "May 8, 2025",
+    x: -73.9903,
+    y: 40.7033
+  },
+  {
+    id: 16,
+    title: "Pop-Up: Local Lip Lab by Lush Bloom",
+    description: "Custom lip tint mixing, free samples, and a live mini-workshop with the founder of Lush Bloom. A creative pop-up to explore product formulation in person.",
+    location: "Bleecker St, Greenwich Village",
+    category: "Cosmetics",
+    date: "May 3, 2025",
+    x: -74.0005,
+    y: 40.7303
+  },
+  {
+    id: 17,
+    title: "From Campus to Cosmetics: Career Paths Beyond the Label",
+    description: "A panel for students curious about how to break into the cosmetics space—from product development to branding to venture capital. Hear from recent grads now working at Glossier, Sephora, and niche clean brands.",
+    location: "NYU Stern - Tisch Hall Room 103",
+    category: "Cosmetics",
+    date: "May 5, 2025",
+    x: -73.9957,
+    y: 40.7299
+  }
 ];
