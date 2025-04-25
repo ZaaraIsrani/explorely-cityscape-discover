@@ -4,6 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
+  const scrollToMap = () => {
+    const mapSection = document.getElementById('features');
+    mapSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center">
       {/* NYC Skyline background image */}
@@ -34,7 +39,12 @@ const HeroSection: React.FC = () => {
                 Explore Now
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 font-semibold text-lg">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-primary text-primary hover:bg-primary/10 font-semibold text-lg"
+              onClick={scrollToMap}
+            >
               How It Works
             </Button>
           </div>
@@ -65,3 +75,4 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
+
