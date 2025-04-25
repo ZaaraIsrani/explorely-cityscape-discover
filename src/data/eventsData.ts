@@ -571,5 +571,265 @@ export const eventsData: EventData[] = [
     date: "May 5, 2025",
     x: -73.9957,
     y: 40.7299
+  },
+
+  // Automobile Events
+  {
+    id: 56,
+    title: "NYC Auto Show Preview Night",
+    description: "Exclusive preview of the latest luxury and electric vehicles at the iconic Javits Center. Network with industry leaders and be among the first to see next year's models.",
+    location: "Javits Center",
+    category: "Automobile",
+    date: "May 15, 2025",
+    x: -73.9957,
+    y: 40.7566
+  },
+  {
+    id: 57,
+    title: "Electric Vehicle Summit",
+    description: "Join automakers and tech companies showcasing the latest in EV technology and sustainable transportation solutions.",
+    location: "Pier 36",
+    category: "Automobile",
+    date: "May 18, 2025",
+    x: -73.9867,
+    y: 40.7103
+  },
+  {
+    id: 58,
+    title: "Classic Car Exhibition",
+    description: "View rare and vintage automobiles from private collections across the East Coast. Features restoration workshops and networking events.",
+    location: "Brooklyn Navy Yard",
+    category: "Automobile",
+    date: "May 20, 2025",
+    x: -73.9712,
+    y: 40.7015
+  },
+  {
+    id: 59,
+    title: "Future of Urban Mobility Forum",
+    description: "Discussion on autonomous vehicles, smart city integration, and the future of transportation in urban environments.",
+    location: "New Lab",
+    category: "Automobile",
+    date: "May 22, 2025",
+    x: -73.9717,
+    y: 40.6999
+  },
+  {
+    id: 60,
+    title: "Automotive Design Workshop",
+    description: "Learn from leading car designers about the creative process behind concept cars and future mobility solutions.",
+    location: "Parsons School of Design",
+    category: "Automobile",
+    date: "May 25, 2025",
+    x: -73.9937,
+    y: 40.7352
+  },
+
+  // Entertainment Events
+  {
+    id: 61,
+    title: "Broadway Producers Panel",
+    description: "Inside look at producing Broadway shows with top industry professionals. Network with theater executives and creative directors.",
+    location: "New Amsterdam Theatre",
+    category: "Entertainment",
+    date: "May 16, 2025",
+    x: -73.9874,
+    y: 40.7571
+  },
+  {
+    id: 62,
+    title: "Gaming Industry Summit",
+    description: "Connect with game developers, publishers, and esports organizations. Features demos of upcoming releases and industry panels.",
+    location: "ESL Gaming Arena",
+    category: "Entertainment",
+    date: "May 19, 2025",
+    x: -73.9935,
+    y: 40.7505
+  },
+  {
+    id: 63,
+    title: "Film Production Expo",
+    description: "Showcase of the latest film production technology, workshops with industry professionals, and networking opportunities.",
+    location: "Kaufman Astoria Studios",
+    category: "Entertainment",
+    date: "May 21, 2025",
+    x: -73.9242,
+    y: 40.7544
+  },
+  {
+    id: 64,
+    title: "Music Industry Conference",
+    description: "Leading music executives discuss industry trends, featuring live performances and networking sessions.",
+    location: "Sony Hall",
+    category: "Entertainment",
+    date: "May 23, 2025",
+    x: -73.9841,
+    y: 40.7615
+  },
+  {
+    id: 65,
+    title: "Digital Content Creation Summit",
+    description: "Learn from successful content creators about building audiences and monetizing digital platforms.",
+    location: "Chelsea Market",
+    category: "Entertainment",
+    date: "May 26, 2025",
+    x: -74.0048,
+    y: 40.7420
+  },
+
+  // Luxury Goods Events
+  {
+    id: 66,
+    title: "Luxury Watch Exhibition",
+    description: "Exclusive showcase of rare timepieces from prestigious watchmakers, featuring collector meetings and expert panels.",
+    location: "The Plaza Hotel",
+    category: "Luxury Goods",
+    date: "May 17, 2025",
+    x: -73.9746,
+    y: 40.7644
+  },
+  {
+    id: 67,
+    title: "Fine Jewelry Symposium",
+    description: "Leading jewelers present their collections and discuss industry trends in sustainable luxury.",
+    location: "47th Street Diamond District",
+    category: "Luxury Goods",
+    date: "May 20, 2025",
+    x: -73.9812,
+    y: 40.7572
+  },
+  {
+    id: 68,
+    title: "Luxury Real Estate Forum",
+    description: "Network with top real estate professionals and tour exclusive properties across Manhattan.",
+    location: "432 Park Avenue",
+    category: "Luxury Goods",
+    date: "May 22, 2025",
+    x: -73.9717,
+    y: 40.7617
+  },
+  {
+    id: 69,
+    title: "Artisan Craftsmanship Exhibition",
+    description: "Showcase of handcrafted luxury goods featuring demonstrations from master craftsmen.",
+    location: "Metropolitan Pavilion",
+    category: "Luxury Goods",
+    date: "May 24, 2025",
+    x: -73.9935,
+    y: 40.7419
+  },
+  {
+    id: 70,
+    title: "Private Aviation Conference",
+    description: "Learn about the latest in private aviation, featuring tours of luxury aircraft and networking events.",
+    location: "Teterboro Airport",
+    category: "Luxury Goods",
+    date: "May 27, 2025",
+    x: -74.0615,
+    y: 40.8502
+  },
+
+  // Urban Innovation Events
+  {
+    id: 71,
+    title: "Smart City Summit",
+    description: "Explore cutting-edge urban technologies and their implementation in modern cities.",
+    location: "Cornell Tech",
+    category: "Urban Innovation",
+    date: "May 16, 2025",
+    x: -73.9595,
+    y: 40.7527
+  },
+  {
+    id: 72,
+    title: "Urban Planning Symposium",
+    description: "Leading architects and urban planners discuss the future of city development and sustainability.",
+    location: "Center for Architecture",
+    category: "Urban Innovation",
+    date: "May 19, 2025",
+    x: -73.9977,
+    y: 40.7303
+  },
+  {
+    id: 73,
+    title: "Green Building Conference",
+    description: "Latest innovations in sustainable architecture and eco-friendly building technologies.",
+    location: "Building Energy Exchange",
+    category: "Urban Innovation",
+    date: "May 21, 2025",
+    x: -74.0045,
+    y: 40.7127
+  },
+  {
+    id: 74,
+    title: "Urban Mobility Workshop",
+    description: "Discussions on the future of transportation and mobility solutions in urban environments.",
+    location: "NYU Tandon MakerSpace",
+    category: "Urban Innovation",
+    date: "May 23, 2025",
+    x: -73.9867,
+    y: 40.6942
+  },
+  {
+    id: 75,
+    title: "City Infrastructure Forum",
+    description: "Expert panels on modernizing urban infrastructure and implementing smart technologies.",
+    location: "Municipal Building",
+    category: "Urban Innovation",
+    date: "May 26, 2025",
+    x: -74.0046,
+    y: 40.7127
+  },
+
+  // Media and Communications Events
+  {
+    id: 76,
+    title: "Digital Media Summit",
+    description: "Leading media executives discuss the future of digital content and distribution strategies.",
+    location: "Time Warner Center",
+    category: "Media and Communications",
+    date: "May 15, 2025",
+    x: -73.9829,
+    y: 40.7686
+  },
+  {
+    id: 77,
+    title: "PR Innovation Conference",
+    description: "Latest trends in public relations and communications strategy in the digital age.",
+    location: "Edelman NYC Office",
+    category: "Media and Communications",
+    date: "May 18, 2025",
+    x: -73.9935,
+    y: 40.7505
+  },
+  {
+    id: 78,
+    title: "Journalism Tech Expo",
+    description: "Showcase of new technologies revolutionizing news gathering and distribution.",
+    location: "Columbia School of Journalism",
+    category: "Media and Communications",
+    date: "May 20, 2025",
+    x: -73.9631,
+    y: 40.8075
+  },
+  {
+    id: 79,
+    title: "Social Media Strategy Forum",
+    description: "Industry leaders share insights on effective social media management and content strategy.",
+    location: "Facebook NYC",
+    category: "Media and Communications",
+    date: "May 22, 2025",
+    x: -74.0046,
+    y: 40.7366
+  },
+  {
+    id: 80,
+    title: "Broadcasting Innovation Summit",
+    description: "Future of television and streaming media, featuring tech demos and industry panels.",
+    location: "NBC Studios",
+    category: "Media and Communications",
+    date: "May 25, 2025",
+    x: -73.9787,
+    y: 40.7589
   }
 ];
