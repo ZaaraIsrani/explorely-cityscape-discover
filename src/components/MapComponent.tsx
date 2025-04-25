@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { EventData } from '@/types/events';
+import { Link } from 'react-router-dom';
 
 interface MapComponentProps {
   events: Array<EventData>;
@@ -61,13 +62,12 @@ const MapComponent: React.FC<MapComponentProps> = ({ events, onEventSelect }) =>
         </svg>
       `;
 
-      // Add popup
+      // Add popup with minimal info and a link
       const popup = new mapboxgl.Popup({ offset: 25 })
         .setHTML(`
           <div class="p-2">
             <h3 class="font-semibold">${event.title}</h3>
             <p class="text-sm text-gray-600">${event.location}</p>
-            <p class="text-xs text-gray-500">${event.date}</p>
             <a href="/event/${event.id}" class="mt-2 inline-block px-3 py-1 bg-blue-500 text-white text-xs font-medium rounded hover:bg-blue-600">Learn More</a>
           </div>
         `);

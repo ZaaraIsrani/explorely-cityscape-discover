@@ -1,3 +1,4 @@
+
 import { EventData } from "@/types/events";
 
 export const eventsData: EventData[] = [
@@ -8,8 +9,8 @@ export const eventsData: EventData[] = [
     location: "Parsons School of Design", 
     category: "Fashion Tech", 
     date: "Tomorrow, 6-8pm",
-    x: 30,
-    y: 40
+    x: -73.9957,
+    y: 40.7359
   },
   { 
     id: 2, 
@@ -18,8 +19,8 @@ export const eventsData: EventData[] = [
     location: "NYU Langone", 
     category: "Biotech", 
     date: "Sat, 2-4pm",
-    x: 65,
-    y: 60 
+    x: -73.9737,
+    y: 40.7421
   },
   { 
     id: 3, 
@@ -28,8 +29,8 @@ export const eventsData: EventData[] = [
     location: "Stern School of Business", 
     category: "FinTech", 
     date: "Next Wed, 7pm",
-    x: 80,
-    y: 25 
+    x: -74.0060,
+    y: 40.7295
   },
   { 
     id: 4, 
@@ -38,8 +39,8 @@ export const eventsData: EventData[] = [
     location: "NYU Health Hub", 
     category: "Digital Health", 
     date: "Sun, 10am-1pm",
-    x: 45,
-    y: 70 
+    x: -73.9855,
+    y: 40.7330
   },
   { 
     id: 5, 
@@ -48,8 +49,8 @@ export const eventsData: EventData[] = [
     location: "Beauty Labs NYC", 
     category: "Beauty & Cosmetics", 
     date: "Every Tue, 12pm",
-    x: 20,
-    y: 55 
+    x: -73.9925,
+    y: 40.7442
   },
   { 
     id: 6, 
@@ -58,8 +59,8 @@ export const eventsData: EventData[] = [
     location: "Google NYC", 
     category: "Tech", 
     date: "Next Mon, 2-5pm",
-    x: 55,
-    y: 35 
+    x: -74.0037,
+    y: 40.7417
   },
   { 
     id: 7, 
@@ -68,8 +69,8 @@ export const eventsData: EventData[] = [
     location: "Union Square Ventures", 
     category: "Business", 
     date: "Fri, 1-4pm",
-    x: 70,
-    y: 45 
+    x: -73.9901,
+    y: 40.7350
   },
   { 
     id: 8, 
@@ -78,8 +79,8 @@ export const eventsData: EventData[] = [
     location: "Sony Music HQ", 
     category: "Media", 
     date: "Thu, 7-9pm",
-    x: 25,
-    y: 30 
+    x: -73.9782,
+    y: 40.7579
   },
   { 
     id: 9, 
@@ -88,8 +89,8 @@ export const eventsData: EventData[] = [
     location: "Marketing Hub NYC", 
     category: "Media", 
     date: "Wed, 10am-2pm",
-    x: 40,
-    y: 50 
+    x: -73.9844,
+    y: 40.7484
   },
   { 
     id: 10, 
@@ -98,8 +99,8 @@ export const eventsData: EventData[] = [
     location: "Goldman Sachs", 
     category: "Business", 
     date: "Tue, 6-8pm",
-    x: 85,
-    y: 40 
+    x: -74.0150,
+    y: 40.7144
   },
   { 
     id: 11, 
@@ -108,8 +109,8 @@ export const eventsData: EventData[] = [
     location: "Fashion Institute of Technology", 
     category: "Social Impact", 
     date: "Next Thu, 11am-5pm",
-    x: 35,
-    y: 65 
+    x: -73.9953,
+    y: 40.7472
   },
   { 
     id: 12, 
@@ -118,8 +119,8 @@ export const eventsData: EventData[] = [
     location: "The Writers Room NYC", 
     category: "Creativity", 
     date: "Sat, 3-6pm",
-    x: 60,
-    y: 55 
+    x: -73.9882,
+    y: 40.7325
   },
   {
     id: 13,

@@ -3,16 +3,15 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import MapSection from "@/components/MapSection";
 import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
 
 const Explore = () => {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <div className="pt-24 pb-12">
+    <Layout fullWidth>
+      <div className="container mx-auto px-4">
         <MapSection />
       </div>
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 

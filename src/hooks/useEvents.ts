@@ -25,6 +25,7 @@ export const useEvents = () => {
     "Biotech",
     "Digital Health",
     "FinTech",
+    "Cosmetics",
   ];
 
   return {

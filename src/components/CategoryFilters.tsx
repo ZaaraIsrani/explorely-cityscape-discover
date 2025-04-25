@@ -1,6 +1,5 @@
 
 import React from "react";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
@@ -22,14 +21,14 @@ const CategoryFilters: React.FC<CategoryFiltersProps> = ({
 
   return (
     <div className="flex flex-wrap items-center gap-4 mb-6">
-      <div className="flex-1 overflow-x-auto pb-2">
+      <div className="overflow-x-auto pb-2 w-full">
         <div className="flex gap-2 min-w-max">
           {categories.map((category) => (
             category !== "All" && (
               <Badge
                 key={category}
                 variant={activeCategory === category ? "default" : "outline"}
-                className={`rounded-full px-4 py-1.5 text-sm cursor-pointer ${
+                className={`rounded-full px-4 py-1.5 text-sm cursor-pointer whitespace-nowrap ${
                   activeCategory === category
                     ? "bg-primary hover:bg-primary/90"
                     : "hover:bg-primary/10"
@@ -47,7 +46,7 @@ const CategoryFilters: React.FC<CategoryFiltersProps> = ({
         <Button 
           variant="ghost" 
           size="sm" 
-          className="flex items-center gap-1" 
+          className="flex items-center gap-1 ml-auto" 
           onClick={handleClearFilter}
         >
           <X size={14} />
