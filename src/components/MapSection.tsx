@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CategoryFilter from "./CategoryFilter";
+import MapComponent from "./MapComponent";
 
 interface EventData {
   id: number;
@@ -179,102 +180,8 @@ const MapSection: React.FC = () => {
             )}
           </div>
           
-          <div className="lg:w-3/4 relative">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden aspect-[4/3] relative">
-              <div className="absolute inset-0" style={{ 
-                backgroundColor: '#f8f9fa',
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='%23f1f3f5'/%3E%3Cpath d='M10 10h80v80H10z' fill='%23e9ecef'/%3E%3C/svg%3E")`,
-                backgroundSize: '100px 100px',
-              }}>
-                <div className="absolute inset-0">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#E5DEFF]/20 via-[#FDE1D3]/20 to-[#D3E4FD]/20"></div>
-                  <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <div key={i} className="border-b border-[#d1e8f5]/40"></div>
-                    ))}
-                  </div>
-                  <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <div key={i} className="border-r border-[#d1e8f5]/40"></div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              
-              {filteredEvents.map((event) => (
-                <button
-                  key={event.id}
-                  className={`absolute transform -translate-x-1/2 -translate-y-1/2 z-10 transition-all ${
-                    selectedEvent?.id === event.id ? "scale-125 z-20" : "hover:scale-110"
-                  }`}
-                  style={{ left: `${event.x}%`, top: `${event.y}%` }}
-                  onClick={() => setSelectedEvent(event)}
-                >
-                  <div className="relative">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="24" height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      className={`
-                        ${event.category === "Software Engineering" ? "text-blue-500" : ""}
-                        ${event.category === "Finance" ? "text-green-500" : ""}
-                        ${event.category === "Marketing" ? "text-purple-500" : ""}
-                        ${event.category === "Music Business" ? "text-pink-500" : ""}
-                        ${event.category === "Venture Capital" ? "text-amber-500" : ""}
-                        ${event.category === "Fashion Tech" ? "text-rose-500" : ""}
-                        ${event.category === "Beauty & Cosmetics" ? "text-violet-500" : ""}
-                        ${event.category === "Biotech" ? "text-emerald-500" : ""}
-                        ${event.category === "Digital Health" ? "text-cyan-500" : ""}
-                        ${event.category === "FinTech" ? "text-orange-500" : ""}
-                        ${event.category === "EdTech" ? "text-indigo-500" : ""}
-                        ${event.category === "Sustainability" ? "text-teal-500" : ""}
-                        ${event.category === "Food Innovation" ? "text-yellow-500" : ""}
-                        ${event.category === "Media & Entertainment" ? "text-fuchsia-500" : ""}
-                      `}
-                    >
-                      <path
-                        d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
-                        fill="currentColor"
-                        stroke="white"
-                        strokeWidth="2"
-                      ></path>
-                      <circle cx="12" cy="10" r="3" fill="white"></circle>
-                    </svg>
-                    <div className={`
-                      absolute top-[-40px] left-1/2 transform -translate-x-1/2 min-w-[150px] max-w-[200px]
-                      bg-white p-2 rounded shadow-lg text-start
-                      transition-opacity duration-200
-                      ${selectedEvent?.id === event.id ? "opacity-100" : "opacity-0 pointer-events-none"}
-                    `}>
-                      <p className="font-medium text-sm truncate">{event.title}</p>
-                      <p className="text-xs text-muted-foreground">{event.date}</p>
-                    </div>
-                  </div>
-                </button>
-              ))}
-              
-              <div className="absolute top-4 right-4 flex flex-col gap-2">
-                <button className="bg-white rounded-md p-1 shadow-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14"></path>
-                    <path d="M12 5v14"></path>
-                  </svg>
-                </button>
-                <button className="bg-white rounded-md p-1 shadow-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14"></path>
-                  </svg>
-                </button>
-              </div>
-              
-              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-                <div className="flex items-center gap-2 bg-white px-3 py-1 rounded-full shadow-md">
-                  <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-                  <span className="text-xs font-medium">Your Location</span>
-                </div>
-              </div>
-            </div>
+          <div className="lg:w-3/4">
+            <MapComponent events={filteredEvents} onEventSelect={setSelectedEvent} />
           </div>
         </div>
       </div>
