@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { EventData } from "@/types/events";
 import { getAllEvents, getEventsByCategory } from "@/services/eventService";
 import { useQuery } from "@tanstack/react-query";

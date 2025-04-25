@@ -26,12 +26,6 @@ const MapSection: React.FC = () => {
           </p>
         </div>
         
-        <CategoryFilters 
-          categories={categories}
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-        />
-        
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-1/4 space-y-6">
             <div>
