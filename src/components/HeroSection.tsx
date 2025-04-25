@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -6,7 +5,13 @@ import { Link } from "react-router-dom";
 const HeroSection: React.FC = () => {
   const scrollToMap = () => {
     const mapSection = document.getElementById('features');
-    mapSection?.scrollIntoView({ behavior: 'smooth' });
+    console.log('Scroll to map called, mapSection:', mapSection);
+    
+    if (mapSection) {
+      mapSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.error('Map section not found. Check the ID in MapSection component.');
+    }
   };
 
   return (
@@ -75,4 +80,3 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
-
