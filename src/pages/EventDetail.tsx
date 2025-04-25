@@ -1,6 +1,5 @@
-
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
@@ -10,6 +9,7 @@ import { ArrowRight, Map } from "lucide-react";
 
 const EventDetail = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const eventId = id ? parseInt(id) : 0;
   
   const { data: event, isLoading, error } = useQuery({
@@ -87,7 +87,10 @@ const EventDetail = () => {
                 <p className="font-medium">{event.category}</p>
               </div>
               
-              <Button className="w-full mt-4 flex items-center justify-center gap-2">
+              <Button 
+                className="w-full mt-4 flex items-center justify-center gap-2"
+                onClick={() => navigate(`/register/${id}`)}
+              >
                 <span>Register for Event</span>
                 <ArrowRight size={16} />
               </Button>
