@@ -2,18 +2,11 @@
 import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { EventData } from '@/types/events';
 
 interface MapComponentProps {
-  events: Array<{
-    id: number;
-    title: string;
-    location: string;
-    category: string;
-    date: string;
-    x: number;
-    y: number;
-  }>;
-  onEventSelect: (event: any) => void;
+  events: Array<EventData>;
+  onEventSelect: (event: EventData) => void;
 }
 
 const MapComponent: React.FC<MapComponentProps> = ({ events, onEventSelect }) => {
@@ -44,20 +37,16 @@ const MapComponent: React.FC<MapComponentProps> = ({ events, onEventSelect }) =>
       const lat = 40.7128 + (event.y - 50) / 100;
 
       const markerColor = {
-        'Software Engineering': '#3B82F6', // blue
-        'Finance': '#10B981', // green
-        'Marketing': '#8B5CF6', // purple
-        'Music Business': '#EC4899', // pink
-        'Venture Capital': '#F59E0B', // amber
+        'Tech': '#3B82F6', // blue
+        'Business': '#10B981', // green
+        'Media': '#8B5CF6', // purple
+        'Creativity': '#EC4899', // pink
+        'Social Impact': '#F59E0B', // amber
         'Fashion Tech': '#F43F5E', // rose
         'Beauty & Cosmetics': '#8B5CF6', // violet
         'Biotech': '#10B981', // emerald
         'Digital Health': '#06B6D4', // cyan
         'FinTech': '#F97316', // orange
-        'EdTech': '#6366F1', // indigo
-        'Sustainability': '#14B8A6', // teal
-        'Food Innovation': '#EAB308', // yellow
-        'Media & Entertainment': '#D946EF', // fuchsia
       }[event.category] || '#374151';
 
       // Create custom marker element
@@ -77,6 +66,7 @@ const MapComponent: React.FC<MapComponentProps> = ({ events, onEventSelect }) =>
             <h3 class="font-semibold">${event.title}</h3>
             <p class="text-sm text-gray-600">${event.location}</p>
             <p class="text-xs text-gray-500">${event.date}</p>
+            <a href="/event/${event.id}" class="mt-2 inline-block px-3 py-1 bg-blue-500 text-white text-xs font-medium rounded hover:bg-blue-600">Learn More</a>
           </div>
         `);
 

@@ -1,6 +1,6 @@
 
 import React from "react";
-import CategoryFilter from "./CategoryFilter";
+import CategoryFilters from "./CategoryFilters";
 import MapComponent from "./MapComponent";
 import EventList from "./EventList";
 import { useEvents } from "@/hooks/useEvents";
@@ -12,7 +12,8 @@ const MapSection: React.FC = () => {
     selectedEvent, 
     setActiveCategory, 
     setSelectedEvent,
-    categories 
+    categories,
+    isLoading
   } = useEvents();
   
   return (
@@ -25,11 +26,17 @@ const MapSection: React.FC = () => {
           </p>
         </div>
         
+        <CategoryFilters 
+          categories={categories}
+          activeCategory={activeCategory}
+          onCategoryChange={setActiveCategory}
+        />
+        
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-1/4 space-y-6">
             <div>
               <h3 className="text-xl font-semibold mb-4 text-primary">Filter by Category</h3>
-              <CategoryFilter 
+              <CategoryFilters 
                 categories={categories}
                 activeCategory={activeCategory}
                 onCategoryChange={setActiveCategory}
@@ -40,7 +47,13 @@ const MapSection: React.FC = () => {
           </div>
           
           <div className="lg:w-3/4">
-            <MapComponent events={events} onEventSelect={setSelectedEvent} />
+            {isLoading ? (
+              <div className="h-[600px] flex items-center justify-center bg-gray-100 rounded-xl">
+                <p>Loading events...</p>
+              </div>
+            ) : (
+              <MapComponent events={events} onEventSelect={setSelectedEvent} />
+            )}
           </div>
         </div>
       </div>
@@ -49,4 +62,3 @@ const MapSection: React.FC = () => {
 };
 
 export default MapSection;
-

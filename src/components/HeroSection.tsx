@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
   return (
@@ -28,9 +29,11 @@ const HeroSection: React.FC = () => {
             Discover local events and micro-career experiences—all around you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold text-lg">
-              Explore Now
-            </Button>
+            <Link to="/explore">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-semibold text-lg">
+                Explore Now
+              </Button>
+            </Link>
             <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 font-semibold text-lg">
               How It Works
             </Button>
@@ -62,4 +65,3 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
-
