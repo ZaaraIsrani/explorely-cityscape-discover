@@ -1,11 +1,11 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
   
-  // Handle scroll effect for navbar
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-xl font-bold text-primary">
+          <h1 className="text-xl font-bold text-primary cursor-pointer" onClick={() => navigate("/")}>
             Explore<span className="text-accent">ly</span>
           </h1>
         </div>
@@ -35,10 +35,10 @@ const Navbar: React.FC = () => {
           <a href="#whyus" className="text-foreground hover:text-primary transition-colors">
             Why Explorely?
           </a>
-          <Button variant="outline" className="ml-4">
+          <Button variant="outline" className="ml-4" onClick={() => navigate("/login")}>
             Log In
           </Button>
-          <Button>
+          <Button onClick={() => navigate("/signup")}>
             Sign Up
           </Button>
         </div>
