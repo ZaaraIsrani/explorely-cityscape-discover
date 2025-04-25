@@ -21,6 +21,7 @@ const CategoryFilters: React.FC<CategoryFiltersProps> = ({
 
   return (
     <div className="space-y-4">
+      <h3 className="text-xl font-semibold text-primary">Filter by Category</h3>
       <div className="flex flex-wrap gap-2 max-h-[calc(100vh-200px)] overflow-y-auto">
         {categories.map((category) => (
           category !== "All" && (
@@ -56,4 +57,3 @@ const CategoryFilters: React.FC<CategoryFiltersProps> = ({
 };
 
 export default CategoryFilters;
-
