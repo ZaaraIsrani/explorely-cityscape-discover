@@ -2,7 +2,7 @@
 import React from "react";
 import CategoryFilter from "./CategoryFilter";
 import MapComponent from "./MapComponent";
-import EventDetails from "./EventDetails";
+import EventList from "./EventList";
 import { useEvents } from "@/hooks/useEvents";
 
 const MapSection: React.FC = () => {
@@ -26,15 +26,17 @@ const MapSection: React.FC = () => {
         </div>
         
         <div className="flex flex-col lg:flex-row gap-8">
-          <div className="lg:w-1/4">
-            <h3 className="text-xl font-semibold mb-4 text-primary">Filter by Category</h3>
-            <CategoryFilter 
-              categories={categories}
-              activeCategory={activeCategory}
-              onCategoryChange={setActiveCategory}
-            />
+          <div className="lg:w-1/4 space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-primary">Filter by Category</h3>
+              <CategoryFilter 
+                categories={categories}
+                activeCategory={activeCategory}
+                onCategoryChange={setActiveCategory}
+              />
+            </div>
             
-            {selectedEvent && <EventDetails event={selectedEvent} />}
+            <EventList selectedEvent={selectedEvent} />
           </div>
           
           <div className="lg:w-3/4">
@@ -47,3 +49,4 @@ const MapSection: React.FC = () => {
 };
 
 export default MapSection;
+
