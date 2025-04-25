@@ -28,16 +28,11 @@ const MapSection: React.FC = () => {
         
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-1/4 space-y-6">
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-primary">Filter by Category</h3>
-              <div className="overflow-x-auto">
-                <CategoryFilters 
-                  categories={categories}
-                  activeCategory={activeCategory}
-                  onCategoryChange={setActiveCategory}
-                />
-              </div>
-            </div>
+            <CategoryFilters 
+              categories={categories}
+              activeCategory={activeCategory}
+              onCategoryChange={setActiveCategory}
+            />
           </div>
           
           <div className="lg:w-3/4">
